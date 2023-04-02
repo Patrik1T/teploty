@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+    <title>Formular teplot</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+        integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="jumbotron text-center bg-primary">
+        <h1 class="display-1 text-light">Formular teplot</h1>
+    </header>
+    <main class="container">
+        <h2 class="mb-4 p-3 bg-info text-uppercase text-center text-light">Teploty</h2>
+        <div class="container">
+            <form action="" class="needs-validation" novalidate>
+
+                <!-- Text input-->
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="Mereni">Místo měření</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="Mereni" name="Mereni" placeholder="Napiš místo teploty" class="form-control"
+                            >
+                    </div>
+                </div>
+        
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="kolik">V kolik bylo měření</label>
+                    <div class="col-sm-8">
+                        <div class="form-check form-check-inline">
+                            <input name="obor" id="obor-0" value="ráno" checked="checked" type="radio"
+                                class="form-check-input">
+                            <label class="form-check-label" for="obor-0">ráno</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input name="obor" id="obor-1" value="dopoledne" type="radio" class="form-check-input">
+                          <label class="form-check-label" for="obor-1">dopoledne</label>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input name="obor" id="obor-1" value="poledne" type="radio" class="form-check-input">
+                        <label class="form-check-label" for="obor-2">poledne</label>
+                    </div>
+                        <div class="form-check form-check-inline">
+                            <input name="obor" id="obor-1" value="odpoledne" type="radio" class="form-check-input">
+                            <label class="form-check-label" for="obor-3">odpoledne</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input name="obor" id="obor-2" value="večer" type="radio" class="form-check-input">
+                            <label class="form-check-label" for="obor-4">večer</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="den" class="col-sm-2 col-form-label">Den</label>
+                    <div class="col-sm-10">
+                      <select class="form-control" name="den" id="den">
+                        <option value="Pondělí">Pondělí</option>
+                        <option value="Úterý">Úterý</option>
+                        <option value="Středa">Středa</option>
+                        <option value="Čtvrtek">Čtvrtek</option>
+                        <option value="Pátek">Pátek</option>
+                        <option value="Sobota">Sobota</option>
+                        <option value="Neděle">Neděle</option>
+                      </select>
+                    </div>
+                  </div>
+        
+                  <div class="form-group row">
+                    <label for="min" class="col-sm-2 col-form-label"
+                   >MIN teplota</label
+                    >
+                    <div class="col-sm-10">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="min"
+                        id="min"
+                        placeholder="Napište minimální teplotu"
+                      />
+                    </div>
+                
+                </div>
+
+                <form action="/savedata" method="POST">
+                    <div class="form-group row">
+                      <label for="max" class="col-sm-2 col-form-label"
+                        >MAX teplota</label
+                      >
+                      <div class="col-sm-10">
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="max"
+                          id="max"
+                          placeholder="Napište maximální teplotu"
+                        />
+                    </div> 
+                      </div>
+                    
+  
+                    
+                      <form action="/savedata" method="POST">
+                        <div class="form-group row">
+                          <label for="prumer" class="col-sm-2 col-form-label"
+                            >Průměrná teplota</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              name="prumer"
+                              id="prumer"
+                              placeholder="Napište průměrnou teplotu"
+                            />
+                          </div>
+                        </div>
+                 
+  
+            <div class="form-group row">
+              <label for="datum" class="col-sm-2 col-form-label">
+                Datum poslední teploty</label
+              >
+              <div class="col-sm-5">
+                <input
+                  type="date"
+                  class="form-control"
+                  name="datum"
+                  id="datum"
+                />
+              </div>
+              <div class="valid-feedback">Platný údaj.</div>
+                        <div class="invalid-feedback">Napište datum poslední teploty</div>
+            </div>
+
+                <!-- Button (Double) -->
+                <div class="form-group row">
+                    <div class="offset-sm-4 col-sm-8">
+                        <button type="submit" id="submit" name="submit" class="btn btn-success">
+                            Odeslat
+                        </button>
+                        <button type="reset" id="storno" name="storno" class="btn btn-danger">
+                            Stornovat
+                        </button>
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <div id="result" class="alert"></div>
+    </main>
+    <div class="offset-sm-5 col-sm-8">
+    <p><img src="../download.jpg" alt="Teploměr" /></p>
+</div>
+    <footer class="container-fluid text-center">
+        <hr>
+        <p class="offset-sm-1 col-sm-9">&copy; Patrik Tomaštík 2020 - IT2</p>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+        integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+    <script>
+        // Disable form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Get the forms we want to add validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+
+</html>
