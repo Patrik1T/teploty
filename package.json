@@ -1,0 +1,27 @@
+{
+  "name": "kalendar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JirkaITRojek/node.js.git"
+  },
+  "author": "Jiri Rojek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JirkaITRojek/node.js/issues"
+  },
+  "homepage": "https://github.com/JirkaITRojek/node.js#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "csvtojson": "^2.0.10",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "pug": "^3.0.2"
+  }
+}

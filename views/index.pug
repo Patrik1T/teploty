@@ -1,0 +1,35 @@
+doctype html
+html
+    head
+        title Seznam úkolů
+        link(rel='stylesheet'
+href='https://getbootstrap.com/docs/4.4/dist/css/bootstrap.min.css')
+    body
+        header.jumbotron-fluid.bg-success.p-3
+            h1.text-center.text-white #{nadpis}     
+        main.container
+            table(class="table table-striped")
+                thead
+                    tr.bg-dark.text-light
+                        th Místo měření
+                        th Den
+                        th Kdy
+                        th Minimální teplota
+                        th Maximální teplota
+                        th Datum
+                tbody
+                    each ukol in ukoly 
+                        tr
+                            td #{ukol.ukol}
+                            td #{ukol.predmet}
+                            td #{ukol.kdy}
+                            td #{ukol.min}
+                            td #{ukol.max}
+                            td #{ukol.odevzdani}
+        footer.bg-dark.p-2
+            .container.text-white
+                p.float-right
+                    a(href="/") Zpět na formulář
+                p &copy; 2023 -IT2 -Patrik Tomastik
+        script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js')
+        script(src='https://getbootstrap.com/docs/4.4/dist/js/bootstrap.bundle.min.js')

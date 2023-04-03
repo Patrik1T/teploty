@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <title>ToDoList</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <header class="bg-primary text-center p-5">
+      <h1 class="display-1 text-white">Fromulář Teplot</h1>
+    </header>
+    <main class="container">
+      <h2 class="mb-4 p-3 bg-info text-uppercase text-center text-light">Teploty</h2>
+      </h2>
+      <div class="container">
+        <form action="/savedata" method="POST">
+          <form class="needs-validation" novalidate>
+          <div class="form-group row">
+            <label for="ukol" class="col-sm-1 col-form-label"
+              >Měření</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                name="ukol"
+                id="ukol"
+                placeholder="Napište místo měření"
+                required pattern="^[A-ZČ][a-záčďéěíňóřšťůúýž]+$"
+              />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="predmet" class="col-sm-1 col-form-label">Den</label>
+            <div class="col-sm-10">
+              <select class="form-control" name="predmet" id="predmet">
+                <option value="Pondělí">Pondělí</option>
+                <option value="Úterý">Úterý</option>
+                <option value="Středa">Středa</option>
+                <option value="Čtvrtek">Čtvrtek</option>
+                <option value="Pátek">Pátek</option>
+                <option value="Sobota">Sobota</option>
+                <option value="Neděle">Neděle</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="kdy" class="col-sm-1 col-form-label">Kdy</label>
+            <div class="col-sm-10">
+              <select class="form-control" name="kdy" id="kdy">
+                <option value="ráno">ráno</option>
+                <option value="dopoledne">dopoledne</option>
+                <option value="poledne">poledne</option>
+                <option value="odpoledne">odpoledne</option>
+                <option value="večer">večer</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="min" class="col-sm-1 col-form-label"
+           >MIN teplota</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                class="form-control"
+                name="min"
+                id="min"
+                placeholder="Napište minimální teplotu"
+              />
+            </div>
+        
+        </div>
+
+  
+            <div class="form-group row">
+              <label for="max" class="col-sm-1 col-form-label"
+                >MAX teplota</label
+              >
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="max"
+                  id="max"
+                  placeholder="Napište maximální teplotu"
+                />
+            </div> 
+              </div>
+
+          <div class="form-group row">
+            <label for="odevzdani" class="col-sm-1 col-form-label">
+              Datum</label
+            >
+            <div class="col-sm-5">
+              <input
+                type="date"
+                class="form-control"
+                name="odevzdani"
+                id="odevzdani"
+              />
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10">
+              <button type="submit" class="btn btn-primary">
+                Odeslat údaje
+              </button>
+              <button type="reset" id="storno" name="storno" class="btn btn-danger">
+                Stornovat
+            </button>
+            </div>
+          </div>
+        </form>
+      </form>
+      </div>
+    </main>
+    <footer class="bg-light text-center p-3">
+      <p>&copy; 2023 - Patrik Tomastik, IT2, SŠPU Opava</p>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+    integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+    crossorigin="anonymous"></script>
+
+    <script>
+      // Disable form submissions if there are invalid fields
+      (function () {
+          'use strict';
+          window.addEventListener('load', function () {
+              // Get the forms we want to add validation styles to
+              var forms = document.getElementsByClassName('needs-validation');
+              // Loop over them and prevent submission
+              var validation = Array.prototype.filter.call(forms, function (form) {
+                  form.addEventListener('submit', function (event) {
+                      if (form.checkValidity() === false) {
+                          event.preventDefault();
+                          event.stopPropagation();
+                      }
+                      form.classList.add('was-validated');
+                  }, false);
+              });
+          }, false);
+      })();
+  </script>
+  </body>
+</html>
